@@ -165,12 +165,12 @@
               </li>
             </ul>
           </li>
-          <li class='dropdown dark user-menu'>
+          <li class='dropdown dark user-menu', style="height: 40px">
             <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
               <!--<img alt='Mila Kunis' height='23' src='assets/images/avatar.jpg' width='23' />-->
               <!--<span class='user-name hidden-phone'>Mila Kunis</span>-->
-              <% if user_signed_in? %>
-              <%= current_user.email %>
+              <% if admin_signed_in? %>
+              <%= current_admin.email %>
                   <% end %>
               <b class='caret'></b>
             </a>
@@ -189,11 +189,8 @@
               </li>
               <li class='divider'></li>
               <li>
-                <%= link_to  "Sign out", destroy_admin_session_path, :method => :delete, :class => 'icon-signout', :style => 'outline: none' %>
-                <a href='sign_in.html'>
-                  <i class='icon-signout'></i>
-                  Sign out
-                </a>
+                <%= link_to  "Sign out", destroy_admin_session_path, :method => :delete, :class => 'icon-signout', :style => 'outline: none !important' %>
+
               </li>
             </ul>
           </li>
